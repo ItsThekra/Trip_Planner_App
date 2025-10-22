@@ -1,0 +1,1 @@
+// Auth guard to protect routes based on authentication status
