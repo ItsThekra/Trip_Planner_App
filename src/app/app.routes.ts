@@ -4,21 +4,21 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
-    path: '',            // الصفحة الرئيسية
+    path: '',            // Home page
     redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'login',       // صفحة تسجيل الدخول
+    path: 'login',       // Login page
     component: LoginComponent
   },
     {
-    path: 'Dashboard',       
+    path: 'ashboard',       
     component: DashboardComponent
   },
 
   {
-    path: '**',          // أي مسار غير معروف يرجع للـ login
+    path: '**',          // any unknown path redirects to login page
     redirectTo: 'login'
   }
 ];

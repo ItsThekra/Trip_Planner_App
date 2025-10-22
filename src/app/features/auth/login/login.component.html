@@ -1,24 +1,20 @@
+<!-- [(ngModel)] to link fields with ts -->
 <div class="login-container">
   <h2>Login</h2>
 
   <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <!-- حقل البريد الإلكتروني -->
     <label>Email</label>
     <input type="email" [(ngModel)]="email" name="email" placeholder="name@gmail.com" required>
 
-    <!-- حقل كلمة المرور -->
     <label>Password</label>
     <input type="password" [(ngModel)]="password" name="password" placeholder="********" required>
 
-    <!-- زر الدخول -->
-    <button type="submit">Login</button>
+    <button" type="submit">Login</button>
 
-    <!-- رسالة الخطأ -->
     <p *ngIf="errorMessage" style="color:red; text-align:center; margin-top:10px;">
       {{ errorMessage }}
     </p>
 
-    <!-- رابط التسجيل -->
     <p style="text-align:center; margin-top:10px;">
       Don't have an account? <a href="#">Sign up</a>
     </p>
