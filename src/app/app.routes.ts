@@ -2,6 +2,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './features/auth/login/login.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { AuthGuard } from './core/guards/auth.guard'
 
 export const routes: Routes = [
   {
@@ -14,8 +15,9 @@ export const routes: Routes = [
     component: LoginComponent
   },
     {
-    path: 'Dashboard',       
-    component: DashboardComponent
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',          // any unknown path redirects to login page

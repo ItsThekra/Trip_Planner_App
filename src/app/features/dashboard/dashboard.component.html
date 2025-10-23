@@ -1,3 +1,7 @@
-<div>
-    <p>This is a dashboard</p>
+<div class="dashboard">
+  <h2>Trip Planner</h2>
+  <p><strong>Origin:</strong> {{ origin }}</p>
+  <p><strong>Destination:</strong> {{ destination }}</p>
+
+  <button (click)="randomizeDestination()">Randomize Destination</button>
 </div>

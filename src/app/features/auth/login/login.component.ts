@@ -44,7 +44,7 @@ export class LoginComponent {
         if (user) {
           const token = this.generateJWT(user);
           localStorage.setItem('token', token);
-          this.router.navigate(['Dashboard']);
+          this.router.navigate(['dashboard']);
         } else {
           this.errorMessage = 'Account not found. Please check your credentials.';
         }
