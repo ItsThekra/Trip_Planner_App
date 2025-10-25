@@ -1,34 +1,28 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [FormsModule],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
 })
-
-// Logic for the dashboard component
 export class DashboardComponent {
-  // Variables:
-  origin: string = 'Riyadh'; 
-  destination: string = 'Select a destination';
-  cities: string[] = ['Riyadh', 'Jeddah', 'Dammam', 'Mecca', 'Medina', 'Abha', 'Taif'];
+  origin = 'Riyadh';
+  destination = 'Select a destination';
+  url = '';
+  shortUrl = '';
 
-  // from html to link the button click to this method
-  constructor() {
-    this.randomizeDestination();
-  }
+  constructor(private http: HttpClient) {}
 
   randomizeDestination() {
-  let randomCity = this.origin;
+    const cities = ['Jeddah', 'Dammam', 'Mecca', 'Medina', 'Abha', 'Taif'];
+    this.destination = cities[Math.floor(Math.random() * cities.length)];
+    this.url = `https://www.google.com/maps/dir/${this.origin}/${this.destination}/`;
 
-  while (randomCity === this.origin) {
-    randomCity = this.cities[Math.floor(Math.random() * this.cities.length)]; // not understand it yet
+    const api = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://is.gd/create.php?format=simple&url=${this.url}`)}`;
+
+    this.http.get<any>(api).subscribe(res => {
+      this.shortUrl = res.contents.trim();
+    });
   }
-
-  this.destination = randomCity;
-}
-
 }

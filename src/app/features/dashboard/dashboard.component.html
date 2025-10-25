@@ -1,7 +1,14 @@
-<div class="dashboard">
+<body>
+  <div class="dashboard">
   <h2>Trip Planner</h2>
   <p><strong>Origin:</strong> {{ origin }}</p>
   <p><strong>Destination:</strong> {{ destination }}</p>
 
   <button (click)="randomizeDestination()">Randomize Destination</button>
+  <br>
+  <a [href]="url" target="_blank"> <b><span>Destination on Google Maps: </span></b>{{ url }} </a>
+  <br>
+  <a [href]="shortUrl" target="_blank"> <b><span>Shortened URL: </span></b><br>{{ shortUrl }} </a>
 </div>
+
+</body>
