@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 
-@Injectable({ // auth.guard.ts: injectable in any part of the app
+@Injectable({ 
   providedIn: 'root'
 })
 

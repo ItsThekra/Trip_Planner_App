@@ -6,9 +6,6 @@ import { CommonModule } from '@angular/common';
 // @ts-ignore: jwt-encode has no types
 import jwtEncode from 'jwt-encode';
 
-
-// This page splits into two parts: 1. Component Decorator, 2. Component Class
-
 @Component({
   selector: 'app-login',
   standalone: true,

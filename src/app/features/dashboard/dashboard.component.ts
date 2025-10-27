@@ -19,8 +19,8 @@ export class DashboardComponent {
   randomizeDestination() {
     const cities = ['Jeddah', 'Dammam', 'Mecca', 'Medina', 'Abha', 'Taif'];
     this.destination = cities[Math.floor(Math.random() * cities.length)];
-    this.url = `https://www.google.com/maps/dir/${this.origin}/${this.destination}/`;
     this.shortUrl = ''; 
+    this.url = `https://www.google.com/maps/dir/${this.origin}/${this.destination}/`;
   }
 
   shortenUrl() {
